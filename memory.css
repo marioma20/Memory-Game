@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, tahoma, sans-serif;
+}
+.container-button{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(3, 169, 244, 0.9);
+    z-index: 2;
+}
+.container-button span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-color: #f44336;
+    padding: 15px 25px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.memory-info{
+    width: 1080px;
+    margin: 20px auto 0;
+    background-color: #f6f6f6;
+    padding: 20px;
+    font-size: 24px;
+    overflow: hidden;
+    border: 2px solid #2196f3;
+}
+.memory-info .name{
+   float: left;
+   width: 50%;
+}
+.memory-info .try{
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+.memory-blocks{
+    display: flex;
+    width: 1100px;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+.memory-blocks.no-clicking{
+    pointer-events: none;
+}
+.memory-blocks .bock{
+    height: 200px;
+     transition: transform 0.5s;
+     transform-style: preserve-3d;
+     cursor: pointer;
+     position: relative;
+     flex: 1 0 200px;
+     margin: 0 10px 20px;
+}
+.memory-blocks .bock .front{
+   background-color: #333;
+   line-height: 200px;
+}
+.memory-blocks .bock .front::before{
+    position: absolute;
+    content: "!";
+    color: #fff;
+    font-size: 140px;
+    font-weight: bold;
+}
+.memory-blocks .bock .back{
+   background-color: #607d8b;
+   transform: rotateY(180deg);
+   text-align: center;
+}
+.memory-blocks .bock .back img{
+    width: 140px;
+    height: 140px;
+    margin:30px auto;
+}
+.memory-blocks .bock .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+    border: 5px solid #2196f3;
+}
+.memory-blocks .bock.is-fllibed,
+.memory-blocks .bock.has-match{
+   -webkit-transform: rotateY(180deg);
+   -moz-transform: rotateY(180deg);
+   transform: rotateY(180deg); 
+   pointer-events: nonea;
+} 
